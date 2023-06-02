@@ -12,4 +12,8 @@ export const defaultTheme = {
   'base-profile': '#0B1B2B',
   'base-background': '#071422',
   'base-input': '#040F1A',
+
+  'radii-sm': '6px',
+  'radii-md': '8px',
+  'radii-lg': '10px',
 } as const
