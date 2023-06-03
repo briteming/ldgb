@@ -1,67 +1,47 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../lib/axios'
 import { Avatar, Bio, Container, Details, ExtraInfo, Name } from './styles'
-import { UserInfo } from './types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
-  faBuilding,
   faUserGroup,
   faArrowUpRightFromSquare,
+  faLocationDot,
 } from '@fortawesome/free-solid-svg-icons'
+import ProfileAPI from '../../api/profile'
 
 export function Profile() {
-  const [userInfo, setUserInfo] = useState<UserInfo | null>(null)
+  const { data, error, isLoading } = ProfileAPI.useProfile()
 
-  async function getProfileData() {
-    const response = await api.get(
-      `/users/${import.meta.env.VITE_GITHUB_USERNAME}`
-    )
-
-    if (!response.data) return
-
-    setUserInfo({
-      url: response.data.html_url,
-      username: response.data.login,
-      name: response.data.name,
-      bio: response.data.bio,
-      followers: response.data.followers,
-      avatarUrl: response.data.avatar_url,
-    })
-  }
-
-  useEffect(() => {
-    getProfileData()
-  }, [])
+  if (error) return <Container>Something went wrong...</Container>
+  if (isLoading) return <Container>Loading...</Container>
 
   return (
     <Container>
-      <Avatar src={userInfo?.avatarUrl} alt="Profile image" />
+      <Avatar src={data?.avatar_url} alt="Profile image" />
 
       <Details>
         <div>
           <header>
-            <Name>{userInfo?.name}</Name>
-            <a href={userInfo?.url} target="_blank">
+            <Name>{data?.name}</Name>
+            <a href={data?.url} target="_blank">
               Github
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
             </a>
           </header>
-          <Bio>{userInfo?.bio}</Bio>
+          <Bio>{data?.bio}</Bio>
         </div>
         <div>
           <ExtraInfo>
             <li>
               <FontAwesomeIcon icon={faGithub} />
-              {userInfo?.username}
+              {data?.login}
             </li>
             <li>
-              <FontAwesomeIcon icon={faBuilding} />
-              Great State
+              <FontAwesomeIcon icon={faLocationDot} />
+              {data?.location}
             </li>
             <li>
               <FontAwesomeIcon icon={faUserGroup} />
-              {userInfo?.followers} followers
+              {data?.followers} followers
             </li>
           </ExtraInfo>
         </div>
