@@ -1,5 +1,4 @@
-import { Profile } from '../components'
-import { Posts } from '../components/Posts'
+import { Posts, Profile } from '../components'
 
 export function Home() {
   return (

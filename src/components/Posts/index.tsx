@@ -1,4 +1,4 @@
-import { Card } from '../Card'
+import { Card } from '..'
 import { Container, Header, PostsList, SearchInput } from './styles'
 
 export function Posts() {
