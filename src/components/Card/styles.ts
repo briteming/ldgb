@@ -3,8 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1.25rem;
   border-radius: ${({ theme }) => theme['radii-lg']};
+  border: 1px solid transparent;
   padding: 2rem;
   background-color: ${({ theme }) => theme['base-post']};
 
@@ -12,6 +14,16 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+  }
+
+  &,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    border-color: ${({ theme }) => theme['base-label']};
   }
 `
 

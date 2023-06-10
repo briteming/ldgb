@@ -1,7 +1,13 @@
-import { Card } from '..'
 import { Container, Header, PostsList, SearchInput } from './styles'
+import PostsAPI from '../../api/posts'
+import { Card } from '..'
 
 export function Posts() {
+  const { data, error, isLoading } = PostsAPI.usePosts('')
+
+  if (error) return <p>Something went wrong.</p>
+  if (isLoading) return <p>Loading...</p>
+
   return (
     <Container>
       <Header>
@@ -11,21 +17,17 @@ export function Posts() {
       </Header>
 
       <PostsList>
-        <Card
-          title="JavaScript data types and data structures"
-          excerpt="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in..."
-          date={new Date()}
-        />
-        <Card
-          title="JavaScript data types and data structures"
-          excerpt="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in..."
-          date={new Date()}
-        />
-        <Card
-          title="JavaScript data types and data structures"
-          excerpt="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in..."
-          date={new Date()}
-        />
+        {data?.items.map((post) => {
+          return (
+            <Card
+              key={post.id}
+              title={post.title}
+              content={post.body}
+              date={post.created_at}
+              issueNumber={post.number}
+            />
+          )
+        })}
       </PostsList>
     </Container>
   )
