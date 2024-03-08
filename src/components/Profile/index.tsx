@@ -22,7 +22,7 @@ export function Profile() {
         <div>
           <header>
             <Name>{data?.name}</Name>
-            <a href={data?.url} target="_blank">
+            <a href={data?.html_url} target="_blank">
               Github
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
             </a>
