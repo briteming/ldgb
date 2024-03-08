@@ -1,6 +1,6 @@
 import { Container, Header, PostsList, SearchInput } from './styles'
-import PostsAPI from '../../api/posts'
-import { Card } from '..'
+import { Card } from '@/components'
+import { PostsAPI } from '@/api'
 
 export function Posts() {
   const { data, error, isLoading } = PostsAPI.usePosts('')

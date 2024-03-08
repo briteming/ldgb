@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { Endpoints } from '@octokit/types'
-import { api } from '../lib/axios'
+import { api } from '@/lib'
 
 const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME
 

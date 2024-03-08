@@ -7,7 +7,7 @@
  * 2. Add "ThemeType" types to styled-components' default theme
  */
 import 'styled-components'
-import { defaultTheme } from '../styles/themes/default'
+import { defaultTheme } from '@/styles'
 
 // [1]
 type ThemeType = typeof defaultTheme

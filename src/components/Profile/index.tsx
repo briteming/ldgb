@@ -1,12 +1,12 @@
-import { Avatar, Bio, Container, Details, ExtraInfo, Name } from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faUserGroup,
   faArrowUpRightFromSquare,
   faLocationDot,
 } from '@fortawesome/free-solid-svg-icons'
-import ProfileAPI from '../../api/profile'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Avatar, Bio, Container, Details, ExtraInfo, Name } from './styles'
+import { ProfileAPI } from '@/api'
 
 export function Profile() {
   const { data, error, isLoading } = ProfileAPI.useProfile()

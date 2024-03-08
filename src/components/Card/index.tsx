@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { CardProps } from './types'
 import { Container, Date, Excerpt, Heading } from './styles'
-import { stripMarkdown, truncateText } from '../../utils'
+import { stripMarkdown, truncateText } from '@/utils'
 
 export function Card({ title, content, date, issueNumber }: CardProps) {
   const [cleanContent, setCleanContent] = useState('')
