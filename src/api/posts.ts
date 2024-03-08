@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { Endpoints } from '@octokit/types'
+import { useDebounce } from '@/hooks'
 import { api } from '@/lib'
 
 const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME
@@ -23,10 +24,12 @@ const fetchPosts = async (
 }
 
 export default {
-  usePosts: (query: string) =>
-    useQuery({
-      queryKey: ['posts', GITHUB_USERNAME, GITHUB_REPO, query],
-      queryFn: () => fetchPosts(GITHUB_USERNAME, GITHUB_REPO, query),
+  usePosts: (query: string, debounce: number) => {
+    const debouncedQuery = useDebounce(query, debounce)
+    return useQuery({
+      queryKey: ['posts', GITHUB_USERNAME, GITHUB_REPO, debouncedQuery],
+      queryFn: () => fetchPosts(GITHUB_USERNAME, GITHUB_REPO, debouncedQuery),
       staleTime: 1 * 60 * 60 * 1000, // 1 hour
-    }),
+    })
+  },
 }

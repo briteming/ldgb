@@ -5,6 +5,7 @@ export const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 2.25rem;
+  margin-bottom: 2rem;
   padding: 2.25rem 2.5rem;
   background-color: ${({ theme }) => theme['base-profile']};
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);

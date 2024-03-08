@@ -1,15 +1,12 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
-  margin-top: 2rem;
-`
-
 export const Header = styled.header`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
   gap: 0.75rem;
+  margin-bottom: 3rem;
 
   h2 {
     font-size: 1.125rem;
@@ -42,6 +39,5 @@ export const PostsList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
   list-style: none;
 `
