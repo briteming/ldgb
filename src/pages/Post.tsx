@@ -1,4 +1,5 @@
 import { PostAPI } from '@/api'
+import { Markdown, PostDetails } from '@/components'
 import { useParams } from 'react-router-dom'
 
 export function Post() {
@@ -7,15 +8,18 @@ export function Post() {
 
   if (error) return <p>Something went wrong...</p>
   if (isLoading) return <p>Loading...</p>
+  if (!data || !data.user) return
 
   return (
-    <div>
-      <p>Title: {data?.title}</p>
-      <p>Title: {data?.html_url}</p>
-      <p>Username: {data?.user?.login}</p>
-      <p>Comments: {data?.comments}</p>
-      <p>Created at: {data?.created_at}</p>
-      <p>Created at: {data?.body}</p>
-    </div>
+    <>
+      <PostDetails
+        comments={data.comments}
+        createdAt={data.created_at}
+        title={data.title}
+        url={data.html_url}
+        username={data.user.login}
+      />
+      <Markdown content={data.body} />
+    </>
   )
 }

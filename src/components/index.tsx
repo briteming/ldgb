@@ -1,6 +1,8 @@
 export { Card } from './Card'
 export { CardSkeleton } from './CardSkeleton'
+export { Markdown } from './Markdown'
 export { Grid } from './Grid'
 export { Header } from './Header'
+export { PostDetails } from './PostDetails'
 export { Posts } from './Posts'
 export { Profile } from './Profile'
