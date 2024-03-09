@@ -1,7 +1,7 @@
 import { Card, Grid } from '@/components'
-import { IResults } from './types'
+import { ISearchResults } from './types'
 
-export function Results({ posts }: IResults) {
+export function SearchResults({ posts }: ISearchResults) {
   if (!posts) return null
   return (
     <Grid>

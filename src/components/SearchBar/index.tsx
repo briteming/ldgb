@@ -1,7 +1,11 @@
 import { Header, SearchInput } from './styles'
-import { ISearch } from './types'
+import { ISearchBar } from './types'
 
-export function Search({ totalPosts, searchTerm, onSearchChange }: ISearch) {
+export function SearchBar({
+  totalPosts,
+  searchTerm,
+  onSearchChange,
+}: ISearchBar) {
   return (
     <Header>
       <h2>Posts</h2>

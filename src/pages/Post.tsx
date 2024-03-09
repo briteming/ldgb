@@ -6,7 +6,7 @@ export function Post() {
   const { issueNumber } = useParams()
   const { data, error, isLoading } = PostAPI.usePost(issueNumber)
 
-  if (error) return <p>Something went wrong...</p>
+  if (error) return <p>Something went wrong.</p>
   if (isLoading) return <p>Loading...</p>
   if (!data || !data.user) return
 
@@ -19,7 +19,9 @@ export function Post() {
         url={data.html_url}
         username={data.user.login}
       />
-      <Markdown content={data.body} />
+      <section>
+        <Markdown content={data.body} />
+      </section>
     </>
   )
 }

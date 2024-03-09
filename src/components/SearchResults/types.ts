@@ -1,5 +1,5 @@
 import { GithubIssuesType } from '@/api/posts'
 
-export interface IResults {
+export interface ISearchResults {
   posts?: GithubIssuesType['items']
 }

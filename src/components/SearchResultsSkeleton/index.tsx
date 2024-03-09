@@ -1,6 +1,6 @@
 import { CardSkeleton, Grid } from '@/components'
 
-export function Skeleton() {
+export function SearchResultsSkeleton() {
   return (
     <Grid>
       <CardSkeleton />
