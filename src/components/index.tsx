@@ -1,5 +1,6 @@
 export { Card } from './Card'
 export { CardSkeleton } from './CardSkeleton'
+export { Grid } from './Grid'
 export { Header } from './Header'
 export { Posts } from './Posts'
 export { Profile } from './Profile'

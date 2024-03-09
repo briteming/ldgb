@@ -6,7 +6,8 @@ import { api } from '@/lib'
 const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME
 const GITHUB_REPO = import.meta.env.VITE_GITHUB_REPO
 
-type GithubIssuesType = Endpoints['GET /search/issues']['response']['data']
+export type GithubIssuesType =
+  Endpoints['GET /search/issues']['response']['data']
 
 const fetchPosts = async (
   username: string,
@@ -24,7 +25,7 @@ const fetchPosts = async (
 }
 
 export default {
-  usePosts: (query: string, debounce: number) => {
+  useDebouncedPosts: (query: string, debounce: number) => {
     const debouncedQuery = useDebounce(query, debounce)
     return useQuery({
       queryKey: ['posts', GITHUB_USERNAME, GITHUB_REPO, debouncedQuery],
