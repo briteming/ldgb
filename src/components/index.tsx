@@ -1,3 +1,4 @@
+export { ErrorMessage } from './ErrorMessage'
 export { Grid } from './Grid'
 export { Header } from './Header'
 export { PostCard } from './PostCard'

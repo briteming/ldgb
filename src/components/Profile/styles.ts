@@ -1,6 +1,11 @@
-import styled from 'styled-components'
+import { skeletonLoading } from '@/styles'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.section`
+interface IProfileContainer {
+  isLoading: boolean
+}
+
+export const Container = styled.section<IProfileContainer>`
   border-radius: ${({ theme }) => theme['radii-lg']};
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +14,15 @@ export const Container = styled.section`
   padding: 2.25rem 2.5rem;
   background-color: ${({ theme }) => theme['base-profile']};
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+
+  ${({ isLoading }) => {
+    if (isLoading) {
+      return css`
+        height: 13.75rem;
+        ${skeletonLoading}
+      `
+    }
+  }}
 `
 
 export const Avatar = styled.img`

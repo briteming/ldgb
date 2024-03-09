@@ -1,6 +1,11 @@
-import styled from 'styled-components'
+import { skeletonLoading } from '@/styles'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.section`
+interface PostDetailsContainer {
+  isLoading: boolean
+}
+
+export const Container = styled.section<PostDetailsContainer>`
   border-radius: ${({ theme }) => theme['radii-lg']};
   display: flex;
   flex-direction: column;
@@ -45,6 +50,15 @@ export const Container = styled.section`
       border-color: ${({ theme }) => theme['blue']};
     }
   }
+
+  ${({ isLoading }) => {
+    if (isLoading) {
+      return css`
+        height: 13.75rem;
+        ${skeletonLoading}
+      `
+    }
+  }}
 `
 
 export const Title = styled.h2`

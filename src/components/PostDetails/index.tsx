@@ -17,37 +17,43 @@ export function PostDetails({
   username,
   createdAt,
   comments,
+  isLoading,
 }: IPostDetails) {
   const navigate = useNavigate()
   const relativeDate = dayjs(createdAt).fromNow()
 
   return (
-    <Container>
-      <header>
-        <button onClick={() => navigate(-1)}>
-          <FontAwesomeIcon icon={faChevronLeft} size="xs" />
-          Back
-        </button>
-        <a href={url} target="_blank">
-          See on Github
-          <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
-        </a>
-      </header>
-      <Title>{title}</Title>
-      <ExtraInfo>
-        <li>
-          <FontAwesomeIcon icon={faGithub} />
-          {username}
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faCalendarDay} />
-          {relativeDate}
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faComment} />
-          {comments} comments
-        </li>
-      </ExtraInfo>
+    <Container isLoading={isLoading}>
+      {isLoading && <p className="visually-hidden">Loading...</p>}
+      {!isLoading && (
+        <>
+          <header>
+            <button onClick={() => navigate(-1)}>
+              <FontAwesomeIcon icon={faChevronLeft} size="xs" />
+              Back
+            </button>
+            <a href={url} target="_blank">
+              See on Github
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
+            </a>
+          </header>
+          <Title>{title}</Title>
+          <ExtraInfo>
+            <li>
+              <FontAwesomeIcon icon={faGithub} />
+              {username}
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCalendarDay} />
+              {relativeDate}
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faComment} />
+              {comments} comments
+            </li>
+          </ExtraInfo>
+        </>
+      )}
     </Container>
   )
 }

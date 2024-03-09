@@ -1,3 +1,4 @@
+import { skeletonLoading } from '@/styles'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -8,7 +9,7 @@ export const Container = styled.div`
   border-radius: ${({ theme }) => theme['radii-lg']};
   border: 1px solid transparent;
   padding: 2rem;
-  animation: skeleton-loading 1s linear infinite alternate;
+  ${skeletonLoading}
 
   div {
     border-radius: ${({ theme }) => theme['radii-sm']};
@@ -31,15 +32,6 @@ export const Container = styled.div`
         width: 40%;
         background-color: ${({ theme }) => theme['base-span']};
       }
-    }
-  }
-
-  @keyframes skeleton-loading {
-    0% {
-      background-color: ${({ theme }) => theme['base-post']};
-    }
-    100% {
-      background-color: ${({ theme }) => theme['base-border']};
     }
   }
 `
