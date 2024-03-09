@@ -1,6 +1,6 @@
 import { Container } from './styles'
 
-export function CardSkeleton() {
+export function PostCardSkeleton() {
   return (
     <Container>
       <header aria-hidden="true">

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
-import { CardProps } from './types'
+import { IPostCard } from './types'
 import { Container, Date, Excerpt, Heading } from './styles'
 import { stripMarkdown, truncateText } from '@/utils'
 
-export function Card({ title, content, date, issueNumber }: CardProps) {
+export function PostCard({ title, content, date, issueNumber }: IPostCard) {
   const [cleanContent, setCleanContent] = useState('')
   const relativeDate = dayjs(date).fromNow()
 

@@ -1,10 +1,10 @@
-import { CardSkeleton, Grid } from '@/components'
+import { PostCardSkeleton, Grid } from '@/components'
 
 export function SearchResultsSkeleton() {
   return (
     <Grid>
-      <CardSkeleton />
-      <CardSkeleton />
+      <PostCardSkeleton />
+      <PostCardSkeleton />
     </Grid>
   )
 }

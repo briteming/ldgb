@@ -1,9 +1,9 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { IMarkdown } from './types'
+import { IPostContent } from './types'
 import { MarkdownContainer } from './styles'
 
-export function Markdown({ content }: IMarkdown) {
+export function PostContent({ content }: IPostContent) {
   return (
     <MarkdownContainer
       children={content}

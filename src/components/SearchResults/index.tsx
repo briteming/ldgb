@@ -1,4 +1,4 @@
-import { Card, Grid } from '@/components'
+import { PostCard, Grid } from '@/components'
 import { ISearchResults } from './types'
 
 export function SearchResults({ posts }: ISearchResults) {
@@ -7,7 +7,7 @@ export function SearchResults({ posts }: ISearchResults) {
     <Grid>
       {posts.map((post) => {
         return (
-          <Card
+          <PostCard
             key={post.id}
             title={post.title}
             content={post.body}

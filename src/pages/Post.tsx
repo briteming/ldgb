@@ -1,6 +1,6 @@
-import { PostAPI } from '@/api'
-import { Markdown, PostDetails } from '@/components'
 import { useParams } from 'react-router-dom'
+import { PostContent, PostDetails } from '@/components'
+import { PostAPI } from '@/api'
 
 export function Post() {
   const { issueNumber } = useParams()
@@ -8,7 +8,7 @@ export function Post() {
 
   if (error) return <p>Something went wrong.</p>
   if (isLoading) return <p>Loading...</p>
-  if (!data || !data.user) return
+  if (!data || !data.user) return null
 
   return (
     <>
@@ -20,7 +20,7 @@ export function Post() {
         username={data.user.login}
       />
       <section>
-        <Markdown content={data.body} />
+        <PostContent content={data.body} />
       </section>
     </>
   )
