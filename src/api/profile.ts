@@ -4,6 +4,7 @@ import { api } from '@/lib'
 
 const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME
 
+// https://octokit.github.io/types.ts/interfaces/Endpoints.html
 type GithubProfileType = Endpoints['GET /users/{username}']['response']['data']
 
 const fetchProfile = async (username: string): Promise<GithubProfileType> => {
