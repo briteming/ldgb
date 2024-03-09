@@ -3,20 +3,13 @@ import styled from 'styled-components'
 export const Container = styled.section`
   border-radius: ${({ theme }) => theme['radii-lg']};
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 2rem;
   padding: 2.25rem 2.5rem;
   background-color: ${({ theme }) => theme['base-profile']};
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
-`
-
-export const Details = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
 
   header {
     display: flex;
@@ -24,10 +17,12 @@ export const Details = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
-  a {
+  a,
+  button {
+    border: 0;
     border-bottom: 1px solid transparent;
     display: inline-flex;
     align-items: center;
@@ -37,6 +32,8 @@ export const Details = styled.div`
     line-height: 160%;
     text-transform: uppercase;
     text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
 
     &,
     &:active,
@@ -50,7 +47,7 @@ export const Details = styled.div`
   }
 `
 
-export const Name = styled.h2`
+export const Title = styled.h2`
   line-height: 130%;
   font-size: 1.5rem;
   font-weight: 700;
@@ -67,7 +64,7 @@ export const ExtraInfo = styled.ul`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: ${({ theme }) => theme['base-subtitle']};
+    color: ${({ theme }) => theme['base-span']};
 
     svg {
       color: ${({ theme }) => theme['base-label']};
