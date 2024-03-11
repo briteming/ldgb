@@ -15,14 +15,7 @@ export function Post() {
 
   return (
     <>
-      <PostDetails
-        comments={data?.comments}
-        createdAt={data?.created_at}
-        title={data?.title}
-        url={data?.html_url}
-        username={data?.user?.login}
-        isLoading={isLoading}
-      />
+      <PostDetails data={data} isLoading={isLoading} />
       {!isLoading && (
         <section>
           <PostContent content={data?.body} />

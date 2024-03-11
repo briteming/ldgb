@@ -1,8 +1,6 @@
+import { GithubIssueType } from '@/api/post'
+
 export interface IPostDetails {
-  title?: string
-  url?: string
-  username?: string
-  comments?: number
-  createdAt?: string
+  data?: GithubIssueType
   isLoading: boolean
 }

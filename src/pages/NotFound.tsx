@@ -1,3 +1,5 @@
+import { ShadowCard } from '@/components'
+
 export function NotFound() {
-  return <div>Page not found</div>
+  return <ShadowCard>Page not found</ShadowCard>
 }
