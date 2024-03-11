@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown'
 
 export const MarkdownContainer = styled(ReactMarkdown)`
   margin: 0 2rem;
-  line-height: 160%;
   color: ${({ theme }) => theme['base-text']};
 
   * {

@@ -1,3 +1,4 @@
+import { typography } from '@/styles'
 import styled from 'styled-components'
 
 export const Container = styled.section`
@@ -17,8 +18,5 @@ export const Container = styled.section`
 `
 
 export const Title = styled.h2`
-  line-height: 130%;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme['base-title']};
+  ${typography.heading.lg}
 `

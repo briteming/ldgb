@@ -5,7 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Avatar, Bio, Container, Details, Name } from './styles'
+import { Avatar, Container, Details, Name } from './styles'
 import { ShadowCard, ErrorMessage, InlineList } from '@/components'
 import { ProfileAPI } from '@/api'
 
@@ -38,7 +38,7 @@ export function Profile() {
                     />
                   </a>
                 </header>
-                <Bio>{data?.bio}</Bio>
+                <p>{data?.bio}</p>
               </div>
               <InlineList>
                 <li>

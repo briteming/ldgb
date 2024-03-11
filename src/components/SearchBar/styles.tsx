@@ -1,3 +1,4 @@
+import { typography } from '@/styles'
 import styled from 'styled-components'
 
 export const Header = styled.header`
@@ -9,16 +10,11 @@ export const Header = styled.header`
   margin-bottom: 3rem;
 
   h2 {
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 160%;
-    color: ${({ theme }) => theme['base-subtitle']};
+    ${typography.heading.sm}
   }
 
   p {
-    font-size: 0.875rem;
-    line-height: 160%;
-    color: ${({ theme }) => theme['base-span']};
+    ${typography.text.sm}
   }
 `
 

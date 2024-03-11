@@ -21,7 +21,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
-    font: 400 1rem Nunito, sans-serif;
+    font-family: Nunito, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
   }
 
   // SR only

@@ -1,3 +1,4 @@
+import { typography } from '@/styles'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -28,21 +29,16 @@ export const Container = styled.div`
 `
 
 export const Heading = styled.h3`
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 160%;
-  color: ${({ theme }) => theme['base-title']};
+  ${typography.heading.md}
 `
 
 export const Date = styled.span`
+  ${typography.text.sm}
   margin-top: 0.375rem;
   flex-shrink: 0;
-  font-size: 0.875rem;
   text-align: right;
-  color: ${({ theme }) => theme['base-span']};
 `
 
 export const Excerpt = styled.p`
-  line-height: 160%;
   color: ${({ theme }) => theme['base-text']};
 `

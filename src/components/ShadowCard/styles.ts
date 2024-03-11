@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { skeletonLoading } from '@/styles'
+import { skeletonLoading, typography } from '@/styles'
 
 interface IContainer {
   isLoading: boolean
@@ -19,14 +19,13 @@ export const Container = styled.div<IContainer>`
 
   a,
   button {
+    ${typography.text.sm}
     border: 0;
     border-bottom: 1px solid transparent;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.75rem;
     font-weight: 700;
-    line-height: 160%;
     text-transform: uppercase;
     text-decoration: none;
     background-color: transparent;
