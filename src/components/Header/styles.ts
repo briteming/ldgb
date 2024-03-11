@@ -11,7 +11,11 @@ export const HeaderContainer = styled.header`
   background-size: cover;
   background-position: center bottom;
 
-  img {
+  a {
     transform: translateY(-50%);
+  }
+
+  img {
+    display: block;
   }
 `

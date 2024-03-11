@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
-  gap: 2.25rem;
+  gap: 2rem;
 `
 
 export const Avatar = styled.img`

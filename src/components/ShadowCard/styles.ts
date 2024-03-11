@@ -12,8 +12,8 @@ const loadingStyles = css`
 
 export const Container = styled.div<IContainer>`
   border-radius: ${({ theme }) => theme['radii-lg']};
-  margin-bottom: 2rem;
-  padding: 2.25rem 2.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem 2.5rem;
   box-shadow: 0 2px 28px rgba(0, 0, 0, 0.2);
   background-color: ${({ theme }) => theme['base-profile']};
 
