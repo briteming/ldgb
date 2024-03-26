@@ -1,4 +1,4 @@
-# Coffee Delivery app
+# GitHub Blog
 
 ## Table of contents
 
